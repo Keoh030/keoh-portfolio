@@ -29,10 +29,11 @@ Stand 2026-06-28 · Single Source für das Personal-Brand-Ecosystem. Status ehrl
 
 ### Offen · von dir nachzuliefern (siehe Abschnitt C)
 - **Zertifikate (PDFs)** · die echten Zertifikats-Dateien gesammelt in einen Ordner
-- **Tool-Screenshots** · echte Screenshots von myjobscan.com und Scanner fürs Deck
-- **Nutzerzahlen** · echte Usage-Zahlen der Tools (auch klein, ehrlich benannt)
+- **Tool-Screenshots** · echte Screenshots von myjobscan.com und DSGVO-Radar fürs Deck
 - **LinkedIn-URL** · für Kontakt-Block in Site, One-Pager, Deck
 - **Domain** · für die Live-Schaltung der Site
+
+> Nutzerzahlen werden NICHT gebraucht und NICHT behauptet. Das System steht ohne Traffic-/Kundenzahlen. Beweis ruht auf den zwei Live-Tools, dem anonymisierten Case und den Capability-Fakten (45→4 Min, 9+6 Checks, 2→8,5).
 
 ### Bewusst weggelassen (kein Fehler, Entscheidung)
 - **Testimonials** · keine erfundenen Stimmen. Sektion bleibt leer, bis echte, zitierbare Referenzen existieren
@@ -44,13 +45,13 @@ Stand 2026-06-28 · Single Source für das Personal-Brand-Ecosystem. Status ehrl
 
 ## C · Offene To-Dos für dich · priorisiert
 
-1. **Nutzerzahlen liefern** (höchster Hebel für Proof of Work)
-   Echte Zahlen für myjobscan und Scanner. Format egal: "X Scans", "Y Audits", "Z Nutzer". Auch klein ist gut, ehrlich schlägt groß.
-2. **LinkedIn-URL** schicken, dann wird der Kontakt-Button überall aktiviert (steht jetzt auf "auf Anfrage").
-3. **Domain entscheiden** für die Live-Site: Subdomain (z.B. `hire.keven-ohlew.com`) oder eigene Domain.
-4. **Zertifikats-PDFs** in `assets/zertifikate/` sammeln, falls du sie einzeln verlinkbar willst.
-5. **Tool-Screenshots** aufnehmen (saubere Frames von myjobscan und Scanner), dann baue ich Bild-Slots ins Deck und in Proof of Work.
-6. **Optional: echtes Studiofoto** wenn du das aktuelle ersetzen willst. Das verbaute ist echt und gut, kein Muss.
+1. **LinkedIn-URL** schicken, dann wird der Kontakt-Button überall aktiviert (steht jetzt auf "auf Anfrage").
+2. **Domain entscheiden** für die Live-Site: Subdomain (z.B. `hire.keven-ohlew.com`) oder eigene Domain.
+3. **Zertifikats-PDFs** in `assets/zertifikate/` sammeln, falls du sie einzeln verlinkbar willst.
+4. **Tool-Screenshots** aufnehmen (saubere Frames von myjobscan und DSGVO-Radar), dann baue ich Bild-Slots ins Deck und in die Werkstücke.
+5. **Optional: echtes Studiofoto** wenn du das aktuelle ersetzen willst. Das verbaute ist echt und gut, kein Muss.
+
+Keine Nutzerzahlen nötig. Du hast keine, das System braucht keine.
 
 ---
 

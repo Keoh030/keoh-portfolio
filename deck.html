@@ -13,6 +13,9 @@
   --f-body:'DM Sans',system-ui,sans-serif;--f-mono:'JetBrains Mono',monospace;--f-sig:'Mr Dafoe',cursive;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+a{color:inherit;cursor:pointer;text-decoration:none;transition:color .2s ease}
+a:focus-visible{outline:2px solid var(--rust);outline-offset:3px;border-radius:2px}
+@media print{a:focus-visible{outline:none}}
 html,body{background:#cfcabf;font-family:var(--f-body);color:var(--ink)}
 @page{size:1280px 720px;margin:0}
 @media print{html,body{background:#fff}.slide{margin:0 !important;box-shadow:none !important}}
@@ -28,6 +31,8 @@ html,body{background:#cfcabf;font-family:var(--f-body);color:var(--ink)}
 .sfoot{position:absolute;left:84px;bottom:42px;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;color:var(--ink-mute)}
 .h2{font-family:var(--f-serif);font-weight:400;font-size:52px;line-height:1.05;letter-spacing:-.01em;margin-top:18px}
 .lead{font-size:19px;line-height:1.5;color:var(--ink-soft);max-width:60ch}
+.subname{display:block;font-family:var(--f-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);margin-top:10px}
+.subname + .proj{margin-top:18px}
 .rust{color:var(--rust)}.gold{color:var(--gold)}
 
 /* COVER */
@@ -201,7 +206,8 @@ html,body{background:#cfcabf;font-family:var(--f-body);color:var(--ink)}
 <!-- 07 WERKSTÜCK Scanner -->
 <section class="slide">
   <span class="kick">06 · Werkstück</span>
-  <h2 class="h2">KEOH Security-Scanner <span class="rust" style="font-size:22px;font-family:var(--f-mono);letter-spacing:.05em">· alpha</span></h2>
+  <h2 class="h2">DSGVO-Radar <span class="rust" style="font-size:22px;font-family:var(--f-mono);letter-spacing:.05em">· alpha</span></h2>
+  <span class="subname">KEOH Security-Scanner</span>
   <div class="proj">
     <div class="proj__blocks">
       <div class="pb"><span class="k">Problem</span><p>Deutsche KMU riskieren DSGVO-Bußgeld durch Google Fonts, Cookie-Banner und Tracking-Pixel. Internationale Scanner kennen die DACH-Rechtslage nicht.</p></div>
