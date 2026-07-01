@@ -23,10 +23,19 @@
 </head>
 <body>
 
+<!-- Scroll progress -->
+<div class="progress-bar" aria-hidden="true"></div>
+
 <div class="grain" aria-hidden="true"></div>
 
+<!-- Custom cursor (desktop only) -->
+<div class="cursor" aria-hidden="true">
+  <div class="cursor__dot"></div>
+  <div class="cursor__ring"></div>
+</div>
+
 <!-- NAV -->
-<header class="nav">
+<header class="nav" id="nav">
   <a href="#top" class="nav__logo">Keven Ohlew</a>
   <nav class="nav__links" aria-label="Hauptnavigation">
     <a href="#loese">Was ich löse</a>
@@ -35,7 +44,21 @@
     <a href="#zertifikate">Zertifikate</a>
     <a href="#kontakt" class="nav__cta">Lass uns reden</a>
   </nav>
+  <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-nav">
+    <span></span><span></span>
+  </button>
 </header>
+
+<!-- Mobile nav drawer -->
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <nav aria-label="Mobile Navigation">
+    <a href="#loese" class="mobile-nav__link">Was ich löse</a>
+    <a href="#story" class="mobile-nav__link">Story</a>
+    <a href="#proof" class="mobile-nav__link">Werkstücke</a>
+    <a href="#zertifikate" class="mobile-nav__link">Zertifikate</a>
+    <a href="#kontakt" class="mobile-nav__link mobile-nav__link--cta">Lass uns reden</a>
+  </nav>
+</div>
 
 <main id="top">
 
@@ -81,6 +104,14 @@
       <span class="lbl">Franklin<br>Abschluss</span>
     </div>
   </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Implementation · Customer Success · KI-Tools · DACH-Compliance · Remote Berlin · 18 Jahre · Builder · Cloudflare · Claude API · </span>
+      <span>Implementation · Customer Success · KI-Tools · DACH-Compliance · Remote Berlin · 18 Jahre · Builder · Cloudflare · Claude API · </span>
+    </div>
+  </div>
 
   <!-- 03 WAS ICH LÖSE -->
   <section class="section loese" id="loese">
@@ -276,3 +307,4 @@
 <script src="js/main.js"></script>
 </body>
 </html>
+

@@ -309,3 +309,149 @@ button:focus-visible,
   [data-reveal]{opacity:1 !important;transform:none !important}
   html{scroll-behavior:auto}
 }
+
+/* ============================================================
+   SCROLL PROGRESS BAR
+   ============================================================ */
+.progress-bar{
+  position:fixed;top:0;left:0;z-index:300;
+  height:2px;background:var(--rust);width:0%;
+  transform-origin:left;pointer-events:none;
+  transition:width .05s linear;
+}
+
+/* ============================================================
+   CUSTOM CURSOR (desktop/hover devices only)
+   ============================================================ */
+@media(hover:hover) and (pointer:fine){
+  body{cursor:none}
+  a,button,.btn,.card,.certs__wall li,.work{cursor:none}
+
+  .cursor{
+    position:fixed;top:0;left:0;z-index:10000;
+    pointer-events:none;
+  }
+  .cursor__dot{
+    position:absolute;width:7px;height:7px;border-radius:50%;
+    background:var(--rust);
+    transform:translate(-50%,-50%);
+    transition:width .18s var(--ease),height .18s var(--ease),background .2s;
+    will-change:transform;
+  }
+  .cursor__ring{
+    position:absolute;width:34px;height:34px;border-radius:50%;
+    border:1.5px solid rgba(28,26,23,.55);
+    transform:translate(-50%,-50%);
+    transition:width .32s var(--ease),height .32s var(--ease),border-color .25s,opacity .2s;
+    will-change:left,top;
+  }
+  body.cursor--hover .cursor__dot{width:10px;height:10px;background:var(--rust)}
+  body.cursor--hover .cursor__ring{width:50px;height:50px;border-color:var(--rust);opacity:.6}
+  body.cursor--text .cursor__dot{width:4px;height:4px}
+  body.cursor--text .cursor__ring{width:28px;height:28px;border-style:dashed}
+}
+
+/* ============================================================
+   MOBILE NAV BURGER
+   ============================================================ */
+.nav__burger{
+  display:none;
+  background:none;border:none;padding:.5rem;
+  flex-direction:column;gap:5px;cursor:pointer;
+  position:relative;z-index:200;
+}
+.nav__burger span{
+  display:block;width:22px;height:1.5px;background:var(--ink);
+  transition:transform .4s var(--ease),opacity .3s;transform-origin:center;
+}
+.nav__burger[aria-expanded="true"] span:first-child{transform:translateY(6.5px) rotate(45deg)}
+.nav__burger[aria-expanded="true"] span:last-child{transform:translateY(-6.5px) rotate(-45deg)}
+@media(max-width:760px){
+  .nav__burger{display:flex}
+  .nav__links{display:none}
+}
+
+/* ============================================================
+   MOBILE NAV DRAWER
+   ============================================================ */
+.mobile-nav{
+  position:fixed;inset:0;z-index:150;
+  background:var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;
+  transition:opacity .45s var(--ease);
+}
+.mobile-nav.is-open{opacity:1;pointer-events:auto}
+.mobile-nav nav{
+  display:flex;flex-direction:column;align-items:center;gap:clamp(1.4rem,4vw,2.4rem);
+}
+.mobile-nav__link{
+  font-family:var(--f-display);font-size:clamp(2.2rem,8vw,3.6rem);
+  text-transform:uppercase;letter-spacing:.02em;color:var(--ink);
+  transition:color .3s,transform .4s var(--ease);
+  display:inline-block;
+}
+.mobile-nav__link:hover{color:var(--rust);transform:translateX(8px)}
+.mobile-nav__link--cta{
+  font-family:var(--f-mono);font-size:clamp(.88rem,2.5vw,1.1rem);
+  text-transform:uppercase;letter-spacing:.1em;
+  border:1.5px solid var(--ink);border-radius:100px;
+  padding:.75em 2em;margin-top:.6rem;
+  transition:background .3s,color .3s,transform .4s var(--ease);
+}
+.mobile-nav__link--cta:hover{background:var(--rust);border-color:var(--rust);color:var(--bg);transform:none}
+
+/* ============================================================
+   MARQUEE TICKER
+   ============================================================ */
+.marquee{
+  overflow:hidden;white-space:nowrap;
+  background:var(--ink);color:var(--gold);
+  padding:.85rem 0;border-top:1px solid rgba(245,241,234,.08);
+}
+.marquee__track{
+  display:inline-flex;
+  font-family:var(--f-mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  animation:marquee-run 28s linear infinite;
+}
+@keyframes marquee-run{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+.marquee:hover .marquee__track{animation-play-state:paused}
+
+/* ============================================================
+   PORTRAIT TILT
+   ============================================================ */
+.hero__portrait{
+  transform-style:preserve-3d;
+  perspective:600px;
+  transition:transform .1s linear;
+}
+.hero__portrait img{transition:filter .6s}
+
+/* ============================================================
+   WORK ITEM · hover accent line
+   ============================================================ */
+.work{position:relative;overflow:hidden}
+.work::before{
+  content:"";position:absolute;left:0;top:0;
+  width:3px;height:0;background:var(--rust);
+  transition:height .55s var(--ease);
+}
+.work:hover::before{height:100%}
+.work:hover .work__meta h3{color:var(--rust);transition:color .3s}
+
+/* ============================================================
+   SECTION DIVIDER (editorial line)
+   ============================================================ */
+.section-rule{
+  max-width:var(--maxw);margin-inline:auto;
+  padding:0 var(--pad);
+}
+.section-rule hr{border:none;border-top:1px solid var(--ink-faint)}
+
+/* Hero headline clip-path reveal base */
+.hero__h1 .line{
+  clip-path:inset(0 0 0 0);
+}
