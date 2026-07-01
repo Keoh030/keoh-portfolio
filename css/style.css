@@ -285,6 +285,19 @@ button:focus-visible,
 .kontakt__h2 em{color:var(--rust)}
 .kontakt__sub{font-size:1.1rem;color:var(--ink-soft);margin-bottom:2.4rem}
 .kontakt__actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+.kontakt__docs{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(.6rem,1.5vw,1.4rem);
+  margin-top:2.4rem;padding-top:1.8rem;border-top:1px solid var(--ink-faint);
+}
+.kontakt__doc{
+  display:inline-flex;align-items:center;gap:.5em;
+  font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-mute);border-bottom:1px solid transparent;
+  transition:color .3s,border-color .3s;padding:.15em 0;
+}
+.kontakt__doc svg{width:14px;height:14px;flex:none;opacity:.6;transition:opacity .3s}
+.kontakt__doc:hover{color:var(--rust);border-color:var(--rust)}
+.kontakt__doc:hover svg{opacity:1}
 
 /* ============================================================
    FOOTER
