@@ -309,7 +309,10 @@ button:focus-visible,
 }
 .foot__sig{font-family:var(--f-sig);font-size:clamp(3rem,7vw,5rem);color:var(--gold);line-height:1;padding-top:.2em}
 .foot__meta{display:flex;flex-direction:column;gap:.4rem;text-align:right;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.05em;color:rgba(245,241,234,.6)}
-@media(max-width:600px){.foot{flex-direction:column;text-align:center}.foot__meta{text-align:center}}
+.foot__legal{display:flex;gap:1.2rem;margin-top:.6rem}
+.foot__legal a{color:rgba(245,241,234,.45);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;font-family:var(--f-mono);border-bottom:1px solid transparent;transition:color .3s,border-color .3s}
+.foot__legal a:hover{color:var(--gold);border-color:var(--gold)}
+@media(max-width:600px){.foot{flex-direction:column;text-align:center}.foot__meta{text-align:center}.foot__legal{justify-content:center}}
 
 /* ============================================================
    MOTION (JS-driven reveal base state)
@@ -467,4 +470,38 @@ button:focus-visible,
 /* Hero headline clip-path reveal base */
 .hero__h1 .line{
   clip-path:inset(0 0 0 0);
+}
+
+/* ============================================================
+   MOBILE · 480px and below
+   ============================================================ */
+@media(max-width:480px){
+  /* Hero: portrait full-width on small phones */
+  .hero__portrait{max-width:100%;justify-self:stretch}
+  .hero__portrait img{height:clamp(220px,55vw,320px)}
+
+  /* Hero actions: stack buttons vertically */
+  .hero__actions{flex-direction:column;gap:.7rem}
+  .hero__actions .btn{width:100%;justify-content:center;text-align:center}
+
+  /* Kontakt actions: stack vertically */
+  .kontakt__actions{flex-direction:column;align-items:stretch}
+  .kontakt__actions .btn{width:100%;justify-content:center}
+
+  /* Work block: tighter label on very small screens */
+  .work__block{grid-template-columns:4.2rem 1fr;gap:.6rem}
+
+  /* Docs: 2 columns */
+  .kontakt__docs{gap:.5rem}
+  .kontakt__doc{font-size:.68rem}
+
+  /* Section padding slightly less aggressive */
+  .section{padding-left:1.1rem;padding-right:1.1rem}
+  .hero{padding-left:1.1rem;padding-right:1.1rem}
+
+  /* Proofbar: ensure numbers don't overflow */
+  .proofbar .num{font-size:clamp(2.2rem,10vw,3.2rem)}
+
+  /* Certs: single column on very small phones */
+  .certs__wall{grid-template-columns:1fr}
 }

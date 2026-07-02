@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum · Keven Ohlew</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://portfolio.keven-ohlew.com/impressum.html">
+<link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+<link href="https://fonts.bunny.net/css?family=bebas-neue:400|dm-serif-display:400,400i|dm-sans:400,500|jetbrains-mono:400|mr-dafoe:400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .legal{max-width:700px;margin-inline:auto;padding:8rem var(--pad) 6rem}
+  .legal__back{display:inline-flex;align-items:center;gap:.4em;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:3rem;transition:color .3s}
+  .legal__back:hover{color:var(--rust)}
+  .legal h1{font-family:var(--f-serif);font-weight:400;font-size:clamp(2.2rem,5vw,3.2rem);margin-bottom:2.5rem;line-height:1.1}
+  .legal h2{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin:2.2rem 0 .8rem}
+  .legal p{color:var(--ink-soft);line-height:1.7;margin-bottom:.8rem;font-size:1rem}
+  .legal a{color:var(--gold);border-bottom:1px solid transparent;transition:border-color .3s,color .3s}
+  .legal a:hover{color:var(--rust);border-color:var(--rust)}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<header class="nav" id="nav">
+  <a href="index.html" class="nav__logo">Keven Ohlew</a>
+</header>
+
+<main class="legal">
+  <a href="index.html" class="legal__back">&#8592; Zurück zur Site</a>
+  <h1>Impressum</h1>
+
+  <h2>Angaben gemäß § 5 DDG</h2>
+  <p>Keven Ohlew<br>
+  Jühnsdorfer Weg 65<br>
+  15827 Blankenfelde-Mahlow</p>
+
+  <h2>Kontakt</h2>
+  <p>E-Mail: <a href="mailto:kevenohlew@googlemail.com">kevenohlew@googlemail.com</a></p>
+
+  <h2>Umsatzsteuer</h2>
+  <p>Gemäß § 19 UStG wird keine Umsatzsteuer erhoben (Kleinunternehmerregelung).</p>
+
+  <h2>Haftung für Inhalte</h2>
+  <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.</p>
+
+  <h2>Haftung für Links</h2>
+  <p>Unser Angebot enthält Links zu externen Websites Dritter. Für diese Inhalte ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar.</p>
+
+  <h2>Urheberrecht</h2>
+  <p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Eine Vervielfältigung, Bearbeitung, Verbreitung oder jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedarf der schriftlichen Zustimmung des Autors.</p>
+</main>
+
+<footer class="foot">
+  <span class="foot__sig">Keven</span>
+  <div class="foot__meta">
+    <span>Keven Ohlew · Berlin · remote DACH</span>
+    <span class="foot__legal">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </span>
+  </div>
+</footer>
+<script src="js/gsap.min.js"></script>
+<script>
+  var nav = document.querySelector('.nav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('is-stuck', window.scrollY > 40);
+  }, {passive:true});
+</script>
+</body>
+</html>
