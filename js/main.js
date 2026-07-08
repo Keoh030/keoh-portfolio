@@ -139,13 +139,17 @@
       }
     );
 
-    /* ---- Scroll-triggered reveals everywhere else ---- */
+    /* ---- Scroll-triggered reveals everywhere else ----
+       fromTo statt to: CSS versteckt nichts mehr, GSAP uebernimmt beides. */
     gsap.utils.toArray('[data-reveal]').forEach(function (el) {
       if (el.closest('.hero')) return;
-      gsap.to(el, {
-        opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
-        scrollTrigger: { trigger: el, start: 'top 86%', once: true }
-      });
+      gsap.fromTo(el,
+        { opacity: 0, y: 36 },
+        {
+          opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 86%', once: true }
+        }
+      );
     });
 
     /* ---- Count-ups in the proof bar ---- */
