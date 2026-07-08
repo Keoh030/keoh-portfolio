@@ -240,6 +240,10 @@ button:focus-visible,
 .work__link{font-family:var(--f-mono);font-size:.78rem;color:var(--gold-link);display:inline-block;margin-top:.6rem;border-bottom:1px solid transparent;transition:border-color .3s,color .3s}
 .work__link:hover{color:var(--rust);border-color:var(--rust)}
 .work__link--muted{color:var(--ink-mute);pointer-events:none;cursor:default}
+/* Case-Study hebt sich vom Live-Tool ab: Karten-Grund + Gold-Tag statt Rust */
+.work--case{background:var(--card);margin-inline:calc(clamp(1rem,3vw,2rem)*-1);
+  padding-inline:clamp(1rem,3vw,2rem);border-top-color:var(--gold)}
+.work--case .work__tag{color:var(--gold-link)}
 .work__body{display:flex;flex-direction:column;gap:1.1rem}
 .work__block{display:grid;grid-template-columns:5.5rem 1fr;gap:1rem;align-items:baseline}
 .work__k{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute)}
@@ -408,6 +412,7 @@ button:focus-visible,
   display:inline-block;
 }
 .mobile-nav__link:hover{color:var(--rust);transform:translateX(8px)}
+.mobile-nav__link:focus-visible{outline:2px solid var(--rust);outline-offset:4px}
 .mobile-nav__link--cta{
   font-family:var(--f-mono);font-size:clamp(.88rem,2.5vw,1.1rem);
   text-transform:uppercase;letter-spacing:.1em;
