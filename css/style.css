@@ -126,7 +126,11 @@ html[data-accent="edition"] { --acid:#3EB8C4; --acid-rim:#8BD4DC; --acid-rgb:62 
 @media(prefers-reduced-motion:reduce){
   .acc-dots,.acc-dots button i{transition:none}
 }
-@media(max-width:900px){ .acc-lab{display:none} }
+/* Grenze 1200 statt 900 (Fund 04.08.2026 am lebenden Objekt): bei 966 px
+   stiessen Beschriftung und der Knopf 'Lass uns reden' auf null Pixel
+   aneinander. Nicht ueberlappend, aber sichtbar gequetscht. Ab 1200 px
+   bleiben ueber 180 px Luft, darunter traegt nur noch die Punktreihe. */
+@media(max-width:1200px){ .acc-lab{display:none} }
 
 
 *{margin:0;padding:0;box-sizing:border-box}
