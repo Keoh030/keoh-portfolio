@@ -1,0 +1,12 @@
+<!-- KEOH-Favicon · EIN Zeichen fuer alle Flaechen (03.08.2026).
+     Vorher trugen Hauptseite, keoh030, Gallery, Library und Scanner fuenf
+     verschiedene Icons, Portfolio und Muse gar keins · in der Lesezeichen-
+     Leiste sah das nach fuenf Firmen aus statt nach einer.
+     Der Tuerkis-Punkt (#2EC4B6) hier war ausserdem Marcels Tenant-Farbe,
+     nicht Kevens: Kunden-Farbe im eigenen Marken-Icon (Tenant-Grenze,
+     DESIGN-DNA). Jetzt: Ink-Grund, Signatur-K in Kalk, Rust-Punkt. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#0B0E13"/>
+  <text x="16" y="25" font-family="'Mr Dafoe', 'Brush Script MT', 'Apple Chancery', 'Snell Roundhand', cursive" font-size="28" font-weight="400" text-anchor="middle" fill="#F0EBE3">K</text>
+  <circle cx="25" cy="24" r="3.2" fill="#C4341A"/>
+</svg>

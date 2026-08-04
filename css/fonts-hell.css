@@ -1,0 +1,19 @@
+/* ============================================================
+   KEOH Portfolio · Schriften für Styleguide 2 HELL (one-pager, deck).
+   Zweites, bewusstes Markensystem neben Fraunces/Hanken (STYLEGUIDE-3) ·
+   selbst gehostet, kein Google Fonts, kein Bunny (NIEMALS-WIEDER 46).
+   Bebas Neue, DM Serif Display (+Italic), DM Sans, JetBrains Mono, Mr Dafoe ·
+   identischer Satz wie keoh-library/keoh-gallery (STYLEGUIDE-2-HELL SSOT).
+   ============================================================ */
+
+@font-face{font-family:'Bebas Neue';src:url(../fonts/bebas-neue-latin-400-normal.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+
+@font-face{font-family:'DM Serif Display';src:url(../fonts/dm-serif-display-latin-400-normal.woff2) format('woff2'),url(../fonts/dm-serif-display-latin-ext-400-normal.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'DM Serif Display';src:url(../fonts/dm-serif-display-latin-400-italic.woff2) format('woff2'),url(../fonts/dm-serif-display-latin-ext-400-italic.woff2) format('woff2');font-weight:400;font-style:italic;font-display:swap}
+
+@font-face{font-family:'DM Sans';src:url(../fonts/dm-sans-latin-400-normal.woff2) format('woff2'),url(../fonts/dm-sans-latin-ext-400-normal.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'DM Sans';src:url(../fonts/dm-sans-latin-500-normal.woff2) format('woff2'),url(../fonts/dm-sans-latin-ext-500-normal.woff2) format('woff2');font-weight:500;font-style:normal;font-display:swap}
+
+@font-face{font-family:'JetBrains Mono';src:url(../fonts/jetbrains-mono-latin-400-normal.woff2) format('woff2'),url(../fonts/jetbrains-mono-latin-ext-400-normal.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+
+@font-face{font-family:'Mr Dafoe';src:url(../fonts/mr-dafoe-latin-400-normal.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}

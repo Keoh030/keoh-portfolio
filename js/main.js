@@ -125,6 +125,21 @@
     return;
   }
 
+  /* Sicherheitsnetz (Regel: Endzustand muss immer erreichbar sein, auch
+     wenn die Animation aus irgendeinem Grund nie fertig wird · ein
+     Hintergrund-Tab pausiert GSAPs requestAnimationFrame-Ticker, ein
+     Skript-Fehler stoppt run() mitten drin. Ohne dieses Netz bliebe die
+     ganze Seite dauerhaft unsichtbar, siehe [data-reveal] Startzustand
+     oben: opacity 0, clip-path inset 100%. Fasst nichts an, was schon
+     sichtbar ist · reine Ausfallsicherung, kein Animations-Ersatz. */
+  window.setTimeout(function () {
+    document.querySelectorAll('[data-reveal]').forEach(function (el) {
+      if (getComputedStyle(el).opacity === '0') {
+        el.style.opacity = 1; el.style.transform = 'none'; el.style.clipPath = 'none';
+      }
+    });
+  }, 2500);
+
   gsap.registerPlugin(ScrollTrigger);
 
   function run() {
@@ -230,4 +245,54 @@
   } else {
     run();
   }
+})();
+
+/* ══════════════════════════════════════════════════════════════════════
+   Farbregler · Portstand 04.08.2026
+   Dieselbe Mechanik wie auf keven-ohlew.com: ein Klick tauscht das
+   Attribut data-accent am <html>, alles Weitere haengt im CSS an --acid.
+   Bewusst ohne Abhaengigkeit zu GSAP, damit der Regler auch dann noch
+   funktioniert, wenn die Animation nicht laedt.
+   Bedienung nach ARIA-Praxis fuer Radiogruppen: die Gruppe ist EIN
+   Tab-Stop, innerhalb wird mit den Pfeiltasten gewechselt.
+   ══════════════════════════════════════════════════════════════════════ */
+(function () {
+  var gruppe = document.getElementById('acc');
+  if (!gruppe) return;
+  var knoepfe = Array.prototype.slice.call(gruppe.querySelectorAll('button[data-accent]'));
+  if (!knoepfe.length) return;
+  var wurzel = document.documentElement;
+
+  function anwenden(name, merken) {
+    if (name === 'rust') wurzel.removeAttribute('data-accent');
+    else wurzel.setAttribute('data-accent', name);
+
+    knoepfe.forEach(function (b) {
+      var an = b.dataset.accent === name;
+      b.setAttribute('aria-checked', an ? 'true' : 'false');
+      b.setAttribute('tabindex', an ? '0' : '-1');
+    });
+
+    if (merken) { try { localStorage.setItem('keoh-accent', name); } catch (e) {} }
+  }
+
+  knoepfe.forEach(function (b, i) {
+    b.addEventListener('click', function () { anwenden(b.dataset.accent, true); });
+    b.addEventListener('keydown', function (e) {
+      var schritt = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1
+                  : e.key === 'ArrowLeft'  || e.key === 'ArrowUp'   ? -1 : 0;
+      if (!schritt) return;
+      e.preventDefault();
+      var ziel = knoepfe[(i + schritt + knoepfe.length) % knoepfe.length];
+      anwenden(ziel.dataset.accent, true);
+      ziel.focus();
+    });
+  });
+
+  /* Gespeicherte Wahl beim Laden uebernehmen. Das Frueh-Skript im <head>
+     hat das Attribut schon gesetzt, hier werden nur die Knoepfe
+     nachgezogen, damit der aktive Punkt stimmt. */
+  var gemerkt = 'rust';
+  try { gemerkt = localStorage.getItem('keoh-accent') || 'rust'; } catch (e) {}
+  anwenden(gemerkt, false);
 })();
