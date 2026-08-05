@@ -120,11 +120,12 @@ html[data-accent="edition"] { --acid:#3EB8C4; --acid-rim:#8BD4DC; --acid-rgb:62 
 /* Tastfläche 24x24 (WCAG 2.2, 2.5.8) ohne den Punkt optisch zu vergrößern.
    Gemessen 06.08.2026: der sichtbare Knopf ist 18.4px. Die Abstands-Ausnahme
    bestand er knapp (Mittenabstand 25.12px, nötig sind 24), das eigentliche
-   Ziel war aber unter 24x24. ::after legt 2.8px in jede Richtung dazu, macht
-   24px. Der Abstand von .42rem (6.7px) ist größer als die nötigen 5.6px, die
-   Flächen stoßen also aneinander, ohne sich zu überlappen. Dieselbe Lösung
-   wie auf keven-ohlew.com, damit der Regler sich überall gleich anfühlt. */
-.acc-dots button::after{content:"";position:absolute;inset:-2.8px;border-radius:50%}
+   Ziel war aber unter 24x24.
+   Nachgemessen am selben Tag: mit 2.8px kam die Fläche auf 23.99px und lag
+   damit um ein Hundertstel unter der Vorgabe · genau die Sorte Zahl, die man
+   ausrechnet statt sie zu messen. Jetzt 3px, macht 24.39px. Der Mittenabstand
+   von 25px bleibt größer als 24, die Flächen überlappen sich also nicht. */
+.acc-dots button::after{content:"";position:absolute;inset:-3px;border-radius:50%}
 .acc-dots button i{width:.72rem;height:.72rem;border-radius:50%;background:var(--sw);
   box-shadow:0 0 0 1px rgba(0,0,0,.35);transition:transform .25s ease,box-shadow .25s ease}
 .acc-dots button[aria-checked="true"] i{transform:scale(1.12);
@@ -303,7 +304,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acid);outline-offse
 .work__meta h3{font-family:var(--f-display);font-weight:900;font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.02;letter-spacing:-.03em}
 .work__sub{font-family:var(--f-body);font-weight:500;font-size:var(--ui-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);display:block;margin-top:.6rem}
 .work__link{font-family:var(--f-body);font-weight:500;font-size:var(--ui-sm);color:var(--acid);display:inline-block;margin-top:.9rem;
-  border-bottom:1px solid transparent;transition:border-color .3s}
+  padding-block:2px;border-bottom:1px solid transparent;transition:border-color .3s}
 .work__link:hover{border-color:var(--acid)}
 .work__link--muted{color:var(--ink-mute);pointer-events:none}
 .work__body{display:flex;flex-direction:column;gap:var(--s-2)}
@@ -384,7 +385,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acid);outline-offse
 .foot__meta{display:flex;flex-direction:column;gap:.35rem;text-align:right;
   font-family:var(--f-body);font-weight:500;font-size:var(--ui-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute)}
 .foot__legal{display:flex;gap:var(--s-2);justify-content:flex-end;flex-wrap:wrap}
-.foot__legal a{transition:color .3s}
+/* 06.08.2026 · die zwei Pflicht-Links waren 17px hoch, die Ziel-Links unter
+   den Werkstücken 21px. Beide stehen nicht in einem Satz, die Inline-Ausnahme
+   aus 2.5.8 greift also nicht. padding-block hebt nur die Trefferfläche. */
+.foot__legal a{transition:color .3s;display:inline-block;padding-block:4px;line-height:17px}
 .foot__legal a:hover{color:var(--acid)}
 
 /* ---- Rechts-Seiten (impressum, datenschutz) ---- */
