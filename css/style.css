@@ -227,7 +227,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acid);outline-offse
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:7rem var(--pad) 4rem}
 .hero__grid{position:relative;max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1.45fr .55fr;
   gap:clamp(2rem,5vw,4.5rem);align-items:center;width:100%}
-/* min-width:0: lange Headline-Woerter duerfen die Portrait-Spalte nicht kollabieren */
+/* min-width:0: lange Headline-Wörter dürfen die Portrait-Spalte nicht kollabieren */
 .hero__grid>*{min-width:0}
 .hero .eyebrow{color:var(--acid);margin-bottom:1.6rem;display:block}
 .hero__h1{font-family:var(--f-display);font-weight:900;font-size:var(--d-1);line-height:.96;letter-spacing:-.035em;
