@@ -116,7 +116,14 @@ html[data-accent="edition"] { --acid:#3EB8C4; --acid-rim:#8BD4DC; --acid-rgb:62 
 .acc-dots{display:flex;gap:.42rem;padding:.3rem .42rem;border-radius:999px;
   box-shadow:inset 0 0 0 1px rgb(var(--acid-rgb) / .28);transition:box-shadow .25s ease}
 .acc-dots button{width:1.15rem;height:1.15rem;padding:0;border:0;border-radius:50%;
-  background:none;cursor:pointer;display:grid;place-items:center}
+  background:none;cursor:pointer;display:grid;place-items:center;position:relative}
+/* Tastflaeche 24x24 (WCAG 2.2, 2.5.8) ohne den Punkt optisch zu vergroessern.
+   Gemessen 06.08.2026: der sichtbare Knopf ist 18.4px, damit war das Ziel zu
+   klein. ::after legt 2.8px in jede Richtung dazu, macht 24px. Der Abstand
+   von .42rem (6.7px) ist groesser als die noetigen 5.6px, die Flaechen
+   stossen also aneinander, ohne sich zu ueberlappen. Dieselbe Loesung wie
+   auf keven-ohlew.com, damit der Regler sich auf beiden Seiten gleich anfuehlt. */
+.acc-dots button::after{content:"";position:absolute;inset:-2.8px;border-radius:50%}
 .acc-dots button i{width:.72rem;height:.72rem;border-radius:50%;background:var(--sw);
   box-shadow:0 0 0 1px rgba(0,0,0,.35);transition:transform .25s ease,box-shadow .25s ease}
 .acc-dots button[aria-checked="true"] i{transform:scale(1.12);
