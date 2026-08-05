@@ -155,7 +155,7 @@
     );
 
     /* ---- Scroll-triggered reveals everywhere else ----
-       fromTo statt to: CSS versteckt nichts mehr, GSAP uebernimmt beides. */
+       fromTo statt to: CSS versteckt nichts mehr, GSAP übernimmt beides. */
     gsap.utils.toArray('[data-reveal]').forEach(function (el) {
       if (el.closest('.hero')) return;
       gsap.fromTo(el,
@@ -250,10 +250,10 @@
 /* ══════════════════════════════════════════════════════════════════════
    Farbregler · Portstand 04.08.2026
    Dieselbe Mechanik wie auf keven-ohlew.com: ein Klick tauscht das
-   Attribut data-accent am <html>, alles Weitere haengt im CSS an --acid.
+   Attribut data-accent am <html>, alles Weitere hängt im CSS an --acid.
    Bewusst ohne Abhaengigkeit zu GSAP, damit der Regler auch dann noch
-   funktioniert, wenn die Animation nicht laedt.
-   Bedienung nach ARIA-Praxis fuer Radiogruppen: die Gruppe ist EIN
+   funktioniert, wenn die Animation nicht lädt.
+   Bedienung nach ARIA-Praxis für Radiogruppen: die Gruppe ist EIN
    Tab-Stop, innerhalb wird mit den Pfeiltasten gewechselt.
    ══════════════════════════════════════════════════════════════════════ */
 (function () {
@@ -289,7 +289,7 @@
     });
   });
 
-  /* Gespeicherte Wahl beim Laden uebernehmen. Das Frueh-Skript im <head>
+  /* Gespeicherte Wahl beim Laden übernehmen. Das Früh-Skript im <head>
      hat das Attribut schon gesetzt, hier werden nur die Knoepfe
      nachgezogen, damit der aktive Punkt stimmt. */
   var gemerkt = 'rust';
