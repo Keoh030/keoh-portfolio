@@ -95,17 +95,17 @@
 }
 /* ── Farbregler · dieselbe Mechanik wie auf keven-ohlew.com (04.08.2026) ──
    Drei Handschriften, eine Marke. Ein Klick tauscht data-accent am <html>,
-   sonst nichts. Alles, was sich mitdreht, haengt an --acid bzw. --acid-rgb,
+   sonst nichts. Alles, was sich mitdreht, hängt an --acid bzw. --acid-rgb,
    deshalb braucht es hier nur diese zwei Zeilen und keine Sonderregeln.
-   --rust bleibt bewusst unangetastet: es ist Flaeche und Kante, nie Text
-   (DESIGN-DNA). Werte 1:1 aus index.template.html uebernommen, damit die
+   --rust bleibt bewusst unangetastet: es ist Fläche und Kante, nie Text
+   (DESIGN-DNA). Werte 1:1 aus index.template.html übernommen, damit die
    beiden Seiten nicht auseinanderlaufen. */
 html[data-accent="amber"]   { --acid:#F2A71B; --acid-rim:#FFD27A; --acid-rgb:242 167 27; }
 html[data-accent="edition"] { --acid:#3EB8C4; --acid-rim:#8BD4DC; --acid-rgb:62 184 196; }
 
 /* ── Der Regler selbst ── */
-/* Nur fuer Screenreader · im Portfolio gab es bisher keine solche Klasse,
-   die Regler-Knoepfe brauchen aber eine lesbare Beschriftung. */
+/* Nur für Screenreader · im Portfolio gab es bisher keine solche Klasse,
+   die Regler-Knöpfe brauchen aber eine lesbare Beschriftung. */
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;
   overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
@@ -135,9 +135,9 @@ html[data-accent="edition"] { --acid:#3EB8C4; --acid-rim:#8BD4DC; --acid-rgb:62 
   .acc-dots,.acc-dots button i{transition:none}
 }
 /* Grenze 1200 statt 900 (Fund 04.08.2026 am lebenden Objekt): bei 966 px
-   stiessen Beschriftung und der Knopf 'Lass uns reden' auf null Pixel
-   aneinander. Nicht ueberlappend, aber sichtbar gequetscht. Ab 1200 px
-   bleiben ueber 180 px Luft, darunter traegt nur noch die Punktreihe. */
+   stießen Beschriftung und der Knopf „Lass uns reden“ auf null Pixel
+   aneinander. Nicht überlappend, aber sichtbar gequetscht. Ab 1200 px
+   bleiben über 180 px Luft, darunter trägt nur noch die Punktreihe. */
 @media(max-width:1200px){ .acc-lab{display:none} }
 
 
