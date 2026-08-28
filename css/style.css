@@ -272,7 +272,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acid);outline-offse
 @media(prefers-reduced-motion:reduce){.marquee__track{animation:none}}
 
 /* ---- 03 WAS ICH LÖSE ---- */
-.löse__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+.loese__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
 .card{background:var(--bg);padding:var(--s-6) var(--s-4) var(--s-6) 0;
   display:flex;flex-direction:column;gap:var(--s-2);transition:background .35s var(--ease)}
 .card:hover{background:var(--surface)}
@@ -289,7 +289,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acid);outline-offse
 .act__body h3{font-family:var(--f-display);font-weight:400;font-size:var(--d-3);letter-spacing:-.02em;margin-bottom:.6rem}
 .act__body p{color:var(--ink-soft);font-size:var(--ui-sm);line-height:1.6;max-width:62ch}
 .story__sig{font-family:var(--f-sig);font-size:clamp(2.6rem,6vw,4rem);color:var(--messing);
-  margin-top:2.4rem;padding-bottom:.35em;line-height:1;transform:rotate(-4deg);transform-origin:left}
+  margin-top:2.4rem;padding-bottom:.35em;line-height:1;transform:rotate(-4deg);transform-origin:left;
+  /* Ein Absatz ist so breit wie seine Spalte. Gedreht ragt diese ganze
+     Breite rechts hinaus, obwohl nur fuenf Buchstaben darin stehen ·
+     bei 390px gemessen 21px Querlauf. width:fit-content macht die Kiste
+     so schmal wie das Wort, dann dreht sich auch nur das Wort. */
+  width:fit-content;max-width:100%}
 
 /* ---- 05 WERKSTÜCKE ---- */
 .proof{max-width:var(--maxw)}
@@ -409,7 +414,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acid);outline-offse
   .proofbar{grid-template-columns:repeat(2,1fr)}
   .proofbar__item:nth-child(2n){border-right:none}
   .proofbar__item{border-bottom:1px solid var(--line)}
-  .löse__grid,.beweis__grid{grid-template-columns:1fr 1fr}
+  .loese__grid,.beweis__grid{grid-template-columns:1fr 1fr}
   .firma__grid{grid-template-columns:repeat(3,1fr)}
   .skills__grid{grid-template-columns:1fr}
   .certs__wall{grid-template-columns:repeat(3,1fr)}
@@ -422,7 +427,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acid);outline-offse
   .work__metric{text-align:left}
 }
 @media(max-width:640px){
-  .löse__grid,.beweis__grid,.firma__grid{grid-template-columns:1fr 1fr}
+  .loese__grid,.beweis__grid,.firma__grid{grid-template-columns:1fr 1fr}
   .certs__wall{grid-template-columns:1fr 1fr}
   .act{grid-template-columns:3.2rem 1fr;gap:var(--s-2)}
   .hero{padding-top:6rem}
@@ -432,8 +437,127 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acid);outline-offse
   .foot__legal{justify-content:flex-start}
 }
 @media(max-width:480px){
+  /* Bis heute blieben diese beiden zweispaltig, weil die Regel darueber
+     bei .löse__grid mit Umlaut stand und im HTML loese__grid steht ·
+     gemessen 82px Querlauf bei 320px. */
+  .loese__grid,.beweis__grid{grid-template-columns:1fr}
+  /* Zwei Zertifikatskacheln passen bei 320px nicht mehr · die Namen sind
+     laenger als die Spalte und laufen 34px hinaus. */
+  .certs__wall{grid-template-columns:1fr}
   .proofbar{grid-template-columns:1fr 1fr}
   .work__block{grid-template-columns:1fr;gap:.2rem}
   .firma__grid{grid-template-columns:1fr}
   .kontakt__actions{flex-direction:column;align-items:stretch}
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+ * ZWEIKLANG · 27.08.2026
+ *
+ * Dieselbe Regel wie auf keven-ohlew.com: die Seite hat zwei Gruende.
+ * Der Rahmen bleibt Nacht (Hero mit Portraet, Beweisstreifen, Kontakt,
+ * Fuss), der Lesekoerper wird Tag. Hier gibt es keine Bildschirmfotos,
+ * die eine dunkle Buehne braeuchten · der Wechsel folgt deshalb allein
+ * dem Unterschied zwischen ANSEHEN und LESEN.
+ *
+ * Die Klasse sitzt auf dem Abschnitt, nie auf :root.
+ * ═══════════════════════════════════════════════════════════════════ */
+.tag{
+  --bg:#F5F1EA; --bg-deep:#EFEADF; --surface:#EBE5DA;
+  --card:#EBE5DA; --card-deep:#E4DDD1;
+  --ink:#171A20;
+  --ink-soft:rgba(23,26,32,.78);
+  --ink-mute:rgba(23,26,32,.64);
+  --ink-faint:rgba(23,26,32,.16);
+  --line:rgba(23,26,32,.14);
+  --acid:#A82E15; --acid-rgb:168 46 21;
+  --messing:#6B5426; --amber:#8A5A08;
+  /* --on-rust dreht NIE mit · der Grund unter ihr ist immer Rust,
+     egal welchen Grund der Abschnitt hat. */
+  --on-rust:#F5F1EA;
+  background:var(--bg); color:var(--ink);
+  /* .section hat max-width plus margin:auto · der Papiergrund deckte
+     deshalb nur die Textspalte, links und rechts blieb die Nacht als
+     Balken stehen. Der Schatten legt dieselbe Flaeche bis zum Rand, das
+     clip-path haelt ihn davon ab, eine Bildlaufleiste zu erzeugen. Kein
+     Eingriff in die Struktur, also auch kein Risiko fuer das Raster. */
+  box-shadow:0 0 0 100vmax var(--bg);
+  clip-path:inset(0 -100vmax);
+}
+/* Die Schnittkante · eine Haarlinie, kein Verlauf. Der Wechsel soll
+   gesehen werden. NICHT .naht nennen, der Name ist anderswo vergeben. */
+.schnittkante{border-top:1px solid rgb(var(--acid-rgb) / .26)}
+
+/* ── Fallstudien ────────────────────────────────────────────────────
+   Vier Artikel mit derselben Wirbelsaeule: Lage, Entscheidungen,
+   Ergebnis, Faktenleiste. Gleich gebaut, damit man sie vergleichen
+   kann statt sie einzeln zu lesen. */
+.faelle{padding-block:clamp(4rem,9vw,7.5rem)}
+.section__lede{max-width:58ch;margin-top:clamp(1rem,2.2vw,1.6rem);
+  font-size:var(--ui-lg,1.05rem);line-height:1.65;color:var(--ink-soft)}
+
+.fall{border-top:1px solid var(--line);padding-block:clamp(2.6rem,6vw,4.6rem)}
+.fall:first-of-type{border-top:0}
+
+.fall__kopf{display:grid;grid-template-columns:auto 1fr;
+  gap:clamp(1rem,3vw,2.4rem);align-items:start}
+.fall__nr{font-family:var(--f-body);font-weight:500;font-size:var(--ui-xs);
+  letter-spacing:.18em;text-transform:uppercase;color:var(--acid);
+  padding-top:.35rem;white-space:nowrap}
+.fall__tag{display:inline-flex;align-items:center;gap:.6em;
+  font-family:var(--f-body);font-weight:500;font-size:var(--ui-xs);
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute)}
+.fall__tag::before{content:"";width:6px;height:6px;background:var(--rust);flex:none}
+.fall__h3{font-family:var(--f-display);font-weight:900;
+  font-size:clamp(1.7rem,3.4vw,2.8rem);line-height:1.02;letter-spacing:-.03em;
+  margin-top:.5rem}
+.fall__sub{font-family:var(--f-body);font-size:var(--ui-sm);
+  color:var(--ink-soft);margin-top:.45rem}
+.fall__link{display:inline-block;margin-top:.9rem;font-family:var(--f-body);
+  font-weight:500;font-size:var(--ui-sm);color:var(--acid);
+  border-bottom:1px solid transparent;transition:border-color .25s var(--ease-out,ease)}
+
+.fall__koerper{margin-top:clamp(1.8rem,4vw,3rem);
+  display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(1.6rem,3.4vw,2.6rem);
+  align-content:start}
+.fall__block h4{font-family:var(--f-body);font-weight:500;font-size:var(--ui-xs);
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);
+  margin-bottom:.8rem}
+.fall__block p{max-width:62ch;line-height:1.65;color:var(--ink-soft)}
+
+.fall__ent{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;
+  gap:clamp(1.1rem,2.4vw,1.7rem);counter-reset:ent}
+.fall__ent li{counter-increment:ent;padding-left:2.6rem;position:relative;max-width:64ch}
+/* Die Nummer steht neben der Entscheidung, nicht davor im Text · sie
+   zaehlt Entscheidungen, sie ist keine Reihenfolge im Ablauf. */
+.fall__ent li::before{content:counter(ent,decimal-leading-zero);
+  position:absolute;left:0;top:.1em;font-family:var(--f-body);font-weight:500;
+  font-size:var(--ui-xs);letter-spacing:.1em;color:var(--acid)}
+.fall__ent b{display:block;font-family:var(--f-body);font-weight:500;
+  font-size:var(--ui-lg,1.05rem);color:var(--ink);margin-bottom:.4rem;line-height:1.35}
+.fall__ent p{line-height:1.65;color:var(--ink-soft)}
+/* Der verworfene Weg wird kursiv angekuendigt · er ist der eigentliche
+   Inhalt einer Fallstudie, nicht das Ergebnis. */
+.fall__ent i{font-style:italic;color:var(--ink)}
+
+.fall__fakten{margin-top:clamp(1.8rem,4vw,2.6rem);padding-top:1.2rem;
+  border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:clamp(1.2rem,3vw,3rem)}
+.fall__fakten div{display:flex;flex-direction:column;gap:.3rem}
+.fall__fakten dt{font-family:var(--f-body);font-weight:500;font-size:var(--ui-xs);
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute)}
+.fall__fakten dd{margin:0;font-size:var(--ui-sm);color:var(--ink)}
+
+@media(min-width:960px){
+  /* Erst hier ist Platz fuer zwei Spalten · darunter wuerde die
+     Entscheidungsspalte auf 30 Zeichen fallen und unlesbar werden. */
+  .fall__koerper{grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);
+    column-gap:clamp(2rem,5vw,4.5rem)}
+  .fall__block:nth-child(2){grid-row:span 2}
+}
+@media(max-width:640px){
+  .fall__kopf{grid-template-columns:1fr;gap:.6rem}
+  .fall__ent li{padding-left:2.1rem}
+}
+@media(hover:hover) and (pointer:fine){
+  .fall__link:hover{border-bottom-color:var(--acid)}
 }

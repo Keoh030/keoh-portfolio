@@ -1,12 +1,20 @@
 # Schrift-Lizenzen in diesem Ordner
 
-Angelegt am 07.08.2026 im Zuge der Lizenz-Inventur. Die Familien wurden nicht
+Angelegt am 07.08.2026 im Zuge der Lizenz-Inventur, ergaenzt am 29.08.2026
+um die drei Familien aus dem Portfolio-Design (Archivo, Big Shoulders
+Display, IBM Plex Mono). Auch diese wurden aus der Namenstabelle der Dateien
+gelesen, nicht aus dem Dateinamen · der Bundler hatte sie alle ohne Namen
+abgelegt, und ein Blick auf den Dateinamen haette drei Familien fuer eine
+gehalten. Die Familien wurden nicht
 aus den Dateinamen abgelesen, sondern aus der Namenstabelle der Schriftdateien
 selbst (fontTools, nur lesend). Die Lizenztexte sind unveränderte Kopien aus
 dem Google-Fonts-Repository und liegen als OFL-Datei daneben.
 
 | Familie | Lizenz | Version | Rechteinhaber | Quelle | Lizenzdatei hier | Schnitte |
 |---|---|---|---|---|---|---|
+| Archivo | SIL Open Font License | 1.1 | Copyright 2020 The Archivo Project Authors | https://github.com/google/fonts/blob/main/ofl/archivo/OFL.txt | `OFL-Archivo.txt` | 3 |
+| Big Shoulders Display | SIL Open Font License | 1.1 | Copyright The Big Shoulders Project Authors | https://github.com/google/fonts/blob/main/ofl/bigshouldersdisplay/OFL.txt | `OFL-Big-Shoulders-Display.txt` | 3 |
+| IBM Plex Mono | SIL Open Font License | 1.1 | Copyright 2017 IBM Corp. | https://github.com/google/fonts/blob/main/ofl/ibmplexmono/OFL.txt | `OFL-IBM-Plex-Mono.txt` | 10 |
 | Bebas Neue | SIL Open Font License | 1.1 | Copyright © 2010 by Dharma Type | https://github.com/google/fonts/blob/main/ofl/bebasneue/OFL.txt | `OFL-Bebas-Neue.txt` | 1 |
 | DM Sans | SIL Open Font License | 1.1 | Copyright 2014 The DM Sans Project Authors | https://github.com/google/fonts/blob/main/ofl/dmsans/OFL.txt | `OFL-DM-Sans.txt` | 4 |
 | DM Serif Display | SIL Open Font License | 1.1 | Copyright 2014-2018 Adobe, Copyright 2019 Google LLC | https://github.com/google/fonts/blob/main/ofl/dmserifdisplay/OFL.txt | `OFL-DM-Serif-Display.txt` | 4 |
