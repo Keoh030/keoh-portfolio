@@ -16,6 +16,13 @@
 
 
 
+<style>
+/* Inhalte, die bisher nur bei Maus-Hover erschienen, stehen ohne Hover
+   dauerhaft da. Auf dem Telefon waren sie sonst unsichtbar · gemessen am
+   29.08.2026 mit Touch-Emulation bei 390px: opacity 0 auf allen dreien. */
+[data-mark]{opacity:1}
+@media (hover: hover) and (pointer: fine){ [data-mark]{opacity:0} }
+</style>
 </head>
 <body>
 
@@ -324,14 +331,14 @@
   <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 40; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px clamp(18px, 3vw, 44px); font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #AF8E63">
     <a href="#top" style="display: flex; gap: 10px; align-items: baseline; color: #F2E3CB">
       <span style="letter-spacing: .3em">KEOH</span>
-      <span style="color: #4F85A8">/</span>
-      <span style="color: #C6A15B">KEVEN OHLEW</span>
+      <span style="color: #EBDCC0">·</span>
+      <span style="color: #EBDCC0">KEVEN OHLEW</span>
     </a>
     <nav style="display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px clamp(14px, 2vw, 30px); align-items: center">
-      <a href="#warum" style="color: #AF8E63">WARUM ICH</a>
-      <a href="#arbeiten" style="color: #AF8E63">ARBEITEN</a>
-      <a href="#ablauf" style="color: #AF8E63">ABLAUF</a>
-      <a href="#grenzen" style="color: #AF8E63">GRENZEN</a>
+      <a href="#warum" style="color: #EBDCC0">WARUM ICH</a>
+      <a href="#arbeiten" style="color: #EBDCC0">ARBEITEN</a>
+      <a href="#ablauf" style="color: #EBDCC0">ABLAUF</a>
+      <a href="#grenzen" style="color: #EBDCC0">GRENZEN</a>
       <a href="#kontakt" style="color: #F2E3CB">GESPRÄCH</a>
     </nav>
   </header>
@@ -349,14 +356,14 @@
 
     <div data-ref="heroText" style="position: relative; z-index: 3; min-height: 100vh; display: grid; grid-template-columns: minmax(0, 1fr); align-content: end; padding: 0 clamp(18px, 3vw, 44px) clamp(28px, 5vh, 56px); pointer-events: none">
       <div style="max-width: 46ch">
-        <div style="display: flex; align-items: center; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .28em; color: #C6A15B; margin-top: clamp(56px, 8vh, 96px); margin-bottom: clamp(16px, 3vh, 30px)">
+        <div style="display: flex; align-items: center; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .28em; color: #EBDCC0; margin-top: clamp(56px, 8vh, 96px); margin-bottom: clamp(16px, 3vh, 30px)">
           <span style="width: clamp(24px, 5vw, 64px); height: 1px; background: #3C6580"></span>
           <span>BERLIN · SELBSTSTÄNDIG · SEIT 2026</span>
         </div>
         <h1 style="font-family: 'Big Shoulders Display', Helvetica, sans-serif; font-weight: 800; font-size: clamp(46px, 7.4vw, 128px); line-height: .88; letter-spacing: -.015em; margin: 0; text-transform: uppercase; color: #F2E3CB; text-wrap: balance">
           Deine Arbeit ist gut.<br><span style="color: #CEA876">Online sieht man<br>das noch nicht.</span>
         </h1>
-        <p style="margin: clamp(18px, 3vh, 30px) 0 0; max-width: 40ch; font-size: clamp(14px, 1.1vw, 17px); line-height: 1.55; color: #AF8E63">
+        <p style="margin: clamp(18px, 3vh, 30px) 0 0; max-width: 40ch; font-size: clamp(14px, 1.1vw, 17px); line-height: 1.55; color: #E5D3AF">
           Website, Marke, Texte, Shop und die Papiere dahinter · von einer Person, aus einem Guss.
         </p>
         <div style="display: flex; flex-wrap: wrap; gap: 26px; align-items: center; margin-top: clamp(22px, 4vh, 40px); pointer-events: auto">
@@ -449,7 +456,7 @@
       </div>
       <div style="position: absolute; left: clamp(18px, 3vw, 44px); bottom: clamp(18px, 3vw, 34px); right: clamp(18px, 3vw, 44px); display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px">
         <div>
-          <div data-mark="1" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .24em; color: #E0684A; opacity: 0; transition: opacity .4s ease">LÄUFT SEIT 18. JULI</div>
+          <div data-mark="1" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .24em; color: #E0684A;  transition: opacity .4s ease">LÄUFT SEIT 18. JULI</div>
           <div data-title="1" style="font-family: 'Big Shoulders Display', Helvetica, sans-serif; font-weight: 700; text-transform: uppercase; font-size: clamp(30px, 4.4vw, 74px); line-height: .92; color: #F2E3CB; transition: transform .6s cubic-bezier(.2,.7,.2,1)">KEOH OS</div>
         </div>
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .22em; color: #AF8E63; white-space: nowrap">01 / EIGENES SYSTEM / INTERN IM EINSATZ</span>
@@ -482,7 +489,7 @@
           <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(80deg, rgba(242,227,203,.08) 0 2px, transparent 2px 14px)"></div>
           <div style="position: absolute; left: 16px; bottom: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: .22em; color: rgba(206,168,118,.95)">GALLERY.KEOH030.COM · FÜNF MOTIVE, JE 30 EDITIONEN</div>
         </div>
-        <div data-mark="1" style="position: absolute; top: 14px; right: 14px; width: 9px; height: 9px; background: #98291B; opacity: 0; transition: opacity .4s ease"></div>
+        <div data-mark="1" style="position: absolute; top: 14px; right: 14px; width: 9px; height: 9px; background: #98291B;  transition: opacity .4s ease"></div>
       </a>
       <div style="flex: 1 1 300px">
         <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .22em; color: #C6A15B; margin-bottom: 14px">02 / EIGENES PRODUKT / LIVE</div>
@@ -502,7 +509,7 @@
         <div data-art="1" style="aspect-ratio: 4 / 5; background: #1b3140; position: relative; overflow: hidden; transition: transform .7s cubic-bezier(.2,.7,.2,1)"><img src="assets/screenshots/website-check.webp" alt="Bildschirmabzug des Website Check" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:.92">
           <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(70deg, rgba(242,227,203,.09) 0 2px, transparent 2px 12px)"></div>
         </div>
-        <div data-mark="1" style="position: absolute; left: 12px; top: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: .22em; color: #F2E3CB; opacity: 0; transition: opacity .4s ease">ANSEHEN</div>
+        <div data-mark="1" style="position: absolute; left: 12px; top: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: .22em; color: #F2E3CB;  transition: opacity .4s ease">ANSEHEN</div>
       </a>
       <div style="flex: 1 1 140px; text-align: right; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: .2em; color: rgba(242,227,203,.92); padding-bottom: 6px; line-height: 2">VIERTER FALL FOLGT,<br>SOBALD DIE FREIGABE VORLIEGT</div>
     </div>
@@ -747,7 +754,9 @@
       depth.style.transform = 'translate3d(' + px.toFixed(2) + 'px,' + (py + p * 26).toFixed(2) +
                               'px,0) scale(' + (1 + p * 0.09).toFixed(4) + ')';
     }
-    if (heroText) heroText.style.opacity = String(Math.max(0, 1 - p * 1.5));
+    /* Der Hero-Text blendet beim Scrollen aus. Wer reduzierte Bewegung
+       eingestellt hat, bekommt das nicht · dort bleibt er stehen. */
+    if (heroText) heroText.style.opacity = reduced ? '1' : String(Math.max(0, 1 - p * 1.5));
   }
 
   function tick(t) { raf = requestAnimationFrame(tick); rafAlive = performance.now(); frame(t); }
