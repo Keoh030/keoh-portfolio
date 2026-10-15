@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://portfolio.keven-ohlew.com/sitemap.xml
+Disallow: /
